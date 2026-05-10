@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kishan Coffee | Premium Arabica & Robusta Beans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#f8f1e3] text-[#3F2A1F]">
+
+    <!-- NAV -->
+    <nav class="bg-[#3F2A1F] text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="Kishan Coffee" class="h-12 w-12 object-contain">
+                <div>
+                    <span class="heading-font text-3xl tracking-tighter">KISHAN</span>
+                    <span class="text-amber-300 text-sm font-medium tracking-[2px] block -mt-1">COFFEE</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="hover:text-amber-300">HOME</a>
+                <a href="#comparison" class="hover:text-amber-300">BEANS</a>
+                <a href="#order" class="hover:text-amber-300">ORDER NOW</a>
+                <a href="#contact" class="hover:text-amber-300">CONTACT</a>
+            </div>
+            
+            <a href="#order" class="bg-amber-300 hover:bg-amber-400 text-[#3F2A1F] px-6 py-2.5 rounded-full font-semibold flex items-center gap-2">
+                <i class="fas fa-shopping-bag"></i> ORDER NOW
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="heading-font text-6xl md:text-7xl leading-none tracking-tighter">
+                    THE PERFECT CUP<br>STARTS HERE
+                </h1>
+                <p class="text-2xl text-amber-100">Premium Arabica & Robusta beans delivered fresh.</p>
+                
+                <div class="flex flex-col md:flex-row gap-4">
+                    <button onclick="selectBean('Arabica')" 
+                            class="bean-card flex-1 bg-emerald-600 hover:bg-emerald-700 px-8 py-6 rounded-3xl text-left transition-all">
+                        <span class="block text-sm tracking-widest">ARABICA</span>
+                        <span class="text-3xl font-semibold">Sweeter & Softer</span>
+                    </button>
+                    
+                    <button onclick="selectBean('Robusta')" 
+                            class="bean-card flex-1 bg-orange-600 hover:bg-orange-700 px-8 py-6 rounded-3xl text-left transition-all">
+                        <span class="block text-sm tracking-widest">ROBUSTA</span>
+                        <span class="text-3xl font-semibold">Strong & Bold</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <img src="assets/logo.png" alt="Kishan Coffee" class="max-w-[380px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section id="comparison" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="heading-font text-5xl mb-8">Arabica vs Robusta</h2>
+            <img src="assets/comparison.jpg" alt="Arabica vs Robusta" class="mx-auto rounded-3xl shadow-2xl">
+        </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section id="order" class="py-20 bg-[#3F2A1F] text-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-5xl">Place Your Order</h2>
+                <p class="text-amber-200 mt-3">We'll roast and ship fresh to you</p>
+            </div>
+            
+            <form id="orderForm" class="space-y-8 bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Bean Type</label>
+                        <select id="bean-type" class="form-input w-full bg-white text-[#3F2A1F] rounded-2xl px-6 py-5 text-lg">
+                            <option value="Arabica">Arabica – Sweeter & Softer (Premium)</option>
+                            <option value="Robusta">Robusta – Strong & Bold (Value)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Quantity (kg)</label>
+                        <input type="number" id="quantity" value="1" min="1" step="0.5" class="form-input w-full bg-white text-[#3F2A1F] rounded-2xl px-6 py-5 text-lg">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" required class="form-input w-full bg-white text-[#3F2A1F] rounded-2xl px-6 py-5 text-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" required class="form-input w-full bg-white text-[#3F2A1F] rounded-2xl px-6 py-5 text-lg">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" required class="form-input w-full bg-white text-[#3F2A1F] rounded-2xl px-6 py-5 text-lg">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">Shipping Address</label>
+                    <textarea id="address" rows="3" required class="form-input w-full bg-white text-[#3F2A1F] rounded-3xl px-6 py-5 text-lg"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">Special Instructions / Roast Preference</label>
+                    <textarea id="message" rows="4" class="form-input w-full bg-white text-[#3F2A1F] rounded-3xl px-6 py-5 text-lg"></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn"
+                        class="w-full bg-amber-300 hover:bg-amber-400 text-[#3F2A1F] py-6 rounded-3xl text-2xl font-semibold flex items-center justify-center gap-3">
+                    <i class="fas fa-paper-plane"></i>
+                    SEND ORDER REQUEST
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-[#1C140F] text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-2xl heading-font">KISHAN COFFEE</p>
+            <p>📍 Hayward, California</p>
+            <p class="mt-4">Email: <a href="mailto:order@kishancoffee.com" class="text-amber-300">order@kishancoffee.com</a></p>
+        </div>
+    </footer>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
